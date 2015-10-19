@@ -1,0 +1,379 @@
+<!doctype html>
+<html lang="es">
+
+	<head>
+		<meta charset="utf-8">
+		<title>Control de Versiones y Repositorio con Github</title>
+		<meta name="apple-mobile-web-app-capable" content="yes" />
+		<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/ufps.css" id="theme">
+		<link rel="stylesheet" href="css/styles.css">
+		<!-- Code syntax highlighting -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+
+		<!--[if lt IE 9]>
+		<script src="lib/js/html5shiv.js"></script>
+		<![endif]-->
+	</head>
+
+	<body>
+
+		<div class="reveal">
+			<div class="slides">
+				<section>
+					<img class="flat" src="img/1.jpg">
+					<p>Control de Versiones con Git y Github</p>
+				</section>
+				<section>
+					<h4>¿Por qué usar control de versiones?</h4>
+					<img class="flat" src="img/porque1.png" alt="">
+				</section>
+				<section>
+					<h4>¿Por qué usar control de versiones?</h4>
+					<img class="flat" src="img/porque.png" alt="">
+				</section>
+                <section>
+                	<h4>¿Qué es control de versiones?</h4>
+                	<img class="flat" src="img/2.png">
+                </section>
+				<section>
+					<img class="flat" src="img/3.png" alt="Imagen de Miguel Nieva en http://git.miguelnieva.com/#/14">
+				</section>
+				<section>
+					<h4>Control de versiones</h4>
+					<p>El control de versiones es un sistema que registra los cambios realizados sobre un archivo o conjunto de archivos a lo largo del tiempo, de modo que puedas recuperar versiones específicas más adelante. </p>
+				</section>
+				<section>
+					<h4>Sistemas de control de versiones distribuidos</h4>
+					<img class="flat" src="img/distribuidos.png" alt="">
+				</section>
+				<section>
+					<h4>Git</h4>
+					<ul>
+						<li>Velocidad</li>
+						<li>Diseño sencillo</li>
+						<li>Fuerte apoyo al desarrollo no lineal (miles de ramas paralelas)</li>
+						<li>Completamente distribuido</li>
+						<li>Capaz de manejar grandes proyectos (como el núcleo de Linux) de manera eficiente</li>
+					</ul>
+				</section>
+				<section>
+					<h4>Instantaneas de Git</h4>
+					<img class="flat" src="img/instantaneas git.png" alt="">
+				</section>
+				<section>
+					<h4>Flujo de Git</h4>
+					<img class="flat" src="img/operaciones git.png" alt="">
+				</section>
+				<section>
+					<h4>Github</h4>
+					<img class="flat" src="img/flujo github.png" alt="">
+				</section>
+				<section>
+					<h4>Instalación</h4>
+					<a href="http://git-scm.com/downloads">http://git-scm.com/downloads</a>
+					<img class="flat" src="img/mountietocat.png" alt="">
+				</section>
+				<section>
+					<h4>Configuración</h4>
+					<p>git config --global user.name "Tu nombre"</p>
+					<p>git config --global user.email "tuemail@ejemplo.com"</p>
+					<img class="flat" src="img/jetpacktocat.png" alt="">
+				</section>
+				<section>
+					<h4>Antes de empezar</h4>
+					<ul>
+						<li>ls</li>
+						<li>mkdir CARPETA</li>
+						<li>cd CARPETA</li>
+						<li>cd ../</li>
+						<li>touch ARCHIVO</li>
+					</ul>
+				</section>
+
+				<section>
+					<h4>Primer repositorio</h4>
+					<ul>
+						<li>mkdir hello-world</li>
+						<li>cd hello-world</li>
+						<img class="flat" src="img/red-polo.png" alt="">
+						<!--<li>git init</li>
+						<li>git status</li>-->
+					</ul>
+				</section>
+				<section>
+					<h4>Inicialización</h4>
+					<p>Para iniciar un repositorio git, nos ubicamos en la carpeta del proyecto, y ejecutamos el siguiente comando:</p>
+					<p>git init</p>
+				</section>
+				<section>
+					<h4>Status</h4>
+					<p>Determina que archivos están en que estado dentro del repositorio.</p>
+					<p>git status</p>
+
+				</section>
+				<section>
+					<h4>Añadiendo archivos al repositorio</h4>
+					<p>Creamos un archivo llamado readme.txt. Después de verificar el status (lo cual no es obligatorio) agregamos seguimiento al archivo dentro del repositorio.</p>
+					<ul>
+						<li>git status</li>
+						<li>git add readme.txt</li>
+						<!--<li>git commit -m "Mensaje del commit"</li>
+						<li>git diff</li>-->
+					</ul>
+					<p>Con esto los archivos quedan en el "stage", como un archivo preparado para ser agregado al repo.</p>
+				</section>
+				<section>
+					<h4>Agregando al repositorio</h4>
+					<p>Una vez añadido el archivo podemos integrarlo en el repositorio. Para esto ejecutamos el siguiente comando:</p>
+					<p>git commit -m "Mensaje del commit"</p>
+				</section>
+				<section>
+					<img class="flat" src="img/arbol.png" alt="">
+				</section>
+				<section>
+					<h4>Creando ramas</h4>
+					<p>Las ramas permiten crear variaciones del repositorio original, sin afectarlo inicialmente, y posteriormente, combinar sus cambios. Hay dos maneras de crear una rama nueva</p>
+				</section>
+				<section>
+					<p>La manera original:</p>
+					<ul>
+						<li>git branch nueva_rama</li>
+						<li>git checkout nueva_rama</li>
+					</ul>
+					<p>La manera para perezosos (mi favorita :$ )</p>
+					<ul>
+						<li>git checkout -b nueva_rama</li>
+					</ul>
+						<!--
+						<li>git checkout master</li>
+						<li>git merge nueva_rama</li>
+					</ul>-->
+				</section>
+				<section>
+					<h4>Ramas</h4>
+					<img class="flat" src="img/ramas1.png" alt="">
+				</section>
+				<section>
+					<h4>Ramas</h4>
+					<img class="flat" src="img/ramas2.png" alt="">
+				</section>
+				<section>
+					<h4>Ramas</h4>
+					<img class="flat" src="img/ramas3.png" alt="">
+				</section>
+				<section>
+					<h4>Ramas</h4>
+					<img class="flat" src="img/ramas4.png" alt="">
+				</section>
+				<section>
+					<h4>Ramas</h4>
+					<img class="flat" src="img/ramas5.png" alt="">
+				</section>
+				<section>
+					<h4>Volviendo al ejemplo</h4>
+					<ul>
+						<li>Creamos un nuevo archivo de texto readme2.txt con cualquier contenido.</li>
+						<li>git add .</li>
+						<li>git commit -m "MENSAJE"</li>
+					</ul>
+				</section>
+				<section>
+					<h4>Integrando cambios en la rama original</h4>
+					<p>Una vez consideramos que los cambios en la rama secundaria estan listos para hacer parte de la rama principal, los mezclamos:</p>
+					<ul>
+						<li>git checkout master</li>
+						<li>git merge nueva_rama</li>
+					</ul>
+				</section>
+				<section>
+					<h4>Github</h4>
+					<p>Crea una cuenta en github entrando a <a href="https://github.com/">https://github.com/</a>.</p>
+					<p>git config --global user.username USERNAME</p>
+					<img class="flat" src="img/daftpunktocat-thomas.gif" alt="">
+				</section>
+				<section>
+					<h4>Agregando nuestro repo a github</h4>
+					<p>En la barra superior de github, hacemos clic en el + para crear un nuevo repositorio.</p>
+					<ul>
+						<li>git remote add origin URLFROMGITHUB</li>
+						<li>git push origin master</li>
+					</ul>
+				</section>
+				<section>
+					<h4>Cambios en github</h4>
+					<p>Github mantiene el flujo de git. Sin embargo, estaremos trabajando desde un repositorio local a uno remoto, lo cual nos obliga a realizar algunos cambios. (Imagen para llenar la diapositiva)</p>
+					<img class="flat" src="img/plumber.jpg" alt="">
+				</section>
+				<section>
+					<h4>Obtener la última versión</h4>
+					<p>Un repositorio en github puede tener diferentes copias locales. Si una de esas copias modifica el repositorio, las demas copias estarán desactualizadas hasta que hagamos un pull.</p>
+					<p>git pull origin master</p>
+				</section>
+				<section>
+					<h4>Flujo común</h4>
+					<ul>
+						<li>Realizar modificaciones</li>
+						<li>git add .</li>
+						<li>git commit -m "Mensaje"</li>
+					</ul>
+				</section>
+				<section>
+					<h4>Enviar al repositorio remoto</h4>
+					<p>Para enviar al repositorio remoto, existe el push</p>
+					<p>git push origin master</p>
+				</section>
+				<section>
+					<h4>Trabajo colaborativo (This is github)</h4>
+					<p>El trabajo colaborativo en github puede realizarse de 2 maneras: </p>
+					<ul>
+						<li>Dando permisos de acceso al repositorio a todos los involucrados</li>
+						<li>Teniendo un repositorio "padre", el cual puede ser copiado por los demás para realizar sus cambios. (Lo llamaremos método fork)</li>
+					</ul>
+				</section>
+				<section>
+					<h4>¿Que es un fork?</h4>
+					<p>Es una copia exacta del repositorio original</p>
+					<img src="img/chellocat.jpg" class="flat" alt="">
+				</section>
+				<section>
+					<h4>Método fork</h4>
+					<ol>
+						<li>Alguien crea un repositorio</li>
+						<li>Las demás personas que deseen colaborar realizan un fork</li>
+						<li>Cada persona realiza cambios sobre su fork</li>
+						<li>Al considerar que los cambios deberian integrarse en el repositorio original, se envia un pull request</li>
+						<li>Si el creador admite el pull request, los cambios se integran al proyecto original</li>
+					</ol>
+				</section>
+				<section>
+					<h4>Forkear un repositorio</h4>
+					<p>Forkear es tan sencillo, como hacer clic en el botón fork en la esquina superior derecha de un repositorio.</p>
+					<p>Desde tu cuenta, realiza un fork del siguiente repositorio:</p>
+					<a href="https://github.com/GersonLazaro/charla-github">https://github.com/GersonLazaro/charla-github</a>
+				</section>
+				<section>
+					<h4>Clonar el repositorio</h4>
+					<p>Clonar un repositorio, te crea una copia local en tu equipo del repo remoto en github. En la parte inferior derecha del repositorio en github estan los links para clonar.</p>
+					<p>git clone LINK_PARA_CLONAR_EL_REPO</p>
+				</section>
+				<section>
+					<h4>Añadir el repositorio padre</h4>
+					<p>Esto es necesario para poder obtener los cambios que se hagan no solo en el fork, sino en el repo original.</p>
+					<ul>
+						<li>git remote add upstream https://github.com/GersonLazaro/charla-github.git</li>
+						<li>git fetch upstream</li>
+					</ul>
+				</section>
+				<section>
+					<h4>Actualizar desde el padre</h4>
+					<p>Cada vez que quieras actualizar los cambios hechos en el padre (se recomienda hacerlo antes de hacer commits):</p>
+					<ul>
+						<li>git fetch upstream</li>
+						<li>git merge upstream/master</li>
+					</ul>
+				</section>
+				<section>
+					<h4>Trabaja en el repo</h4>
+					<ul>
+						<li>git checkout -b cambios</li>
+						<li>Crea un archivo TUCODIGO.md (reemplaza TUCODIGO por 115...) que contenga tu nombre, código, y semestre.</li>
+						<li>git add .</li>
+						<li>git commit -m "Añadido TUCODIGO"</li>
+						<li>git push origin cambios</li>
+					</ul>
+				</section>
+				<section>
+					<h4>Pull request</h4>
+					<p>Ahora estas listo para pedir que tus cambios se integren en la rama principal. Desde la interfaz de github, solicita un pull request a la rama master.</p>
+					<img src="img/collabocats.jpg" class="flat" alt="">
+				</section>
+				<section>
+					<h4>Otras funcionalidades de Github</h4>
+					<img src="img/spidertocat.png" class="flat" alt="">
+				</section>
+				<section>
+					<h4>Gists</h4>
+					<p>Algunas veces no tenemos un proyecto completo, sino simples snippets o fragmentos, que de cualquier manera nos gustaria mantener en control de versiones. Para esto, existe gist. </p>
+					<p>Puedes utilizarlo, entrando en <a href="https://gist.github.com/">https://gist.github.com/</a></p>
+				</section>
+				<section>
+					<h4>Issues</h4>
+					<p>Cada repositorio cuenta en la barra lateral derecha con una opción llamada "issues". Desde aqui se pueden reportar bugs, nuevas funcionalidades, organizar tareas, indicar nuevas caracteristicas, etc. </p>
+				</section>
+				<section>
+					<h4>Wiki</h4>
+					<p>También en la barra lateral derecha encontramos la wiki, la cual nos permite crear una wiki *no me digas* sobre el proyecto.</p>
+				</section>
+				<section>
+					<h4>Alternativas a Github que usan git</h4>
+				</section>
+				<section>
+					<img src="img/gitlab.png" alt="">
+				</section>
+				<section>
+					<img src="img/bitbucket.png" class="flat" alt="">
+				</section>
+				<section>
+					<h4>En nuestro festival no hay cerveza, ¡pero hay camisetas!</h4>
+					<img src="img/hacktoberfest-tshirt.png" class="flat" alt="">
+					<a href="hacktoberfest.digitalocean.com">hacktoberfest.digitalocean.com</a>
+				</section>
+				<section>
+					<h4>¿Muchas gracias?</h4>
+					<p>¿Preguntas? ¿Quejas? ¿Reclamos? ¿Limonaditas de mango?</p>
+					<p>Contacto:</p>
+					<ul>
+						<li>Sitio web: <a href="http://www.gersonlazaro.com">www.gersonlazaro.com</a></li>
+						<li>Email: <a href="mailto:gersonlazaro@acm.org">gersonlazaro@acm.org</a></li>
+						<li>Github: <a href="https://github.com/GersonLazaro">GersonLazaro</a></li>
+						<li>Twitter: <a href="http://www.twitter.com/GersonLazaroC">@GersonLazaroC</a></li>
+					</ul>
+					
+
+				</section>
+			</div>
+
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+
+			// Full list of configuration options available at:
+			// https://github.com/hakimel/reveal.js#configuration
+			Reveal.initialize({
+				controls: true,
+				progress: true,
+				history: true,
+				center: true,
+
+				transition: 'slide', // none/fade/slide/convex/concave/zoom
+
+				// Optional reveal.js plugins
+				dependencies: [
+					{ src: 'lib/js/classList.js', condition: function() { return !document.body.classList; } },
+					{ src: 'plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+					{ src: 'plugin/highlight/highlight.js', async: true, condition: function() { return !!document.querySelector( 'pre code' ); }, callback: function() { hljs.initHighlightingOnLoad(); } },
+					{ src: 'plugin/zoom-js/zoom.js', async: true },
+					{ src: 'plugin/notes/notes.js', async: true }
+				]
+			});
+
+		</script>
+
+	</body>
+</html>
